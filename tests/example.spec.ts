@@ -34,18 +34,3 @@ test('test', async ({ page }) => {
   }
 
 });
-
-test('test 2', async ({ page }) => {
-
-  await page.goto('https://mercadolibre.com/');
-
-  await page.getByRole('link', { name: 'Perú' }).click();
-
-  await page.getByRole('combobox', { name: 'Ingresa lo que quieras' }).click();
-  await page.getByRole('combobox', { name: 'Ingresa lo que quieras' }).fill('Iphone');
-  await page.getByRole('search').locator('button').click();
-  await expect(page.locator('h1')).toContainText('Apple iPhone 16 Pro Max (256 GB) - Titanio natural');
-  await expect(page.locator('#root-app')).toContainText('iPhone');
-  await expect(page.getByRole('link', { name: 'Apple iPhone 16 Pro Max (256 GB) - Titanio natural', exact: true })).toBeVisible();
-
-});

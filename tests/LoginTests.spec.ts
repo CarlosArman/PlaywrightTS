@@ -2,6 +2,8 @@ import { test, expect } from '@playwright/test';
 import { LoginPage } from './pages/LoginPage';
 import { ShoppingPage } from './pages/ShoppingPage';
 
+test.use({storageState:{cookies:[],origins:[]}})
+
 test('Login Successfull', async ({ page }) => {
 
     await page.goto('https://saucedemo.com');
